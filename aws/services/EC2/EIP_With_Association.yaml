@@ -22,7 +22,10 @@ Parameters:
       i2.2xlarge, i2.4xlarge, i2.8xlarge, d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge,
       hi1.4xlarge, hs1.8xlarge, cr1.8xlarge, cc2.8xlarge, cg1.4xlarge]
     ConstraintDescription: must be a valid EC2 instance type.
-  KeyName:
+  SubnetId:
+    Description: SubnetId of an existing subnet in your Virtual Private Cloud (VPC)
+    Type: String
+　KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
     Type: AWS::EC2::KeyPair::KeyName
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
@@ -310,6 +313,7 @@ Resources:
         Fn::Join:
         - ''
         - [IPAddress=, !Ref 'IPAddress']
+      SubnetId: !Ref 'SubnetId'
       InstanceType: !Ref 'InstanceType'
       SecurityGroups: [!Ref 'InstanceSecurityGroup']
       KeyName: !Ref 'KeyName'
