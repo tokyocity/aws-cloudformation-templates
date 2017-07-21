@@ -272,7 +272,7 @@ Mappings:
       HVMG2: ami-d9d62ab6
     ap-northeast-1:
       PV64: ami-3e42b65f
-      HVM64: ami-374db956
+      HVM64: ami-3bd3c45c
       HVMG2: ami-78ba6619
     ap-northeast-2:
       PV64: NOT_SUPPORTED
